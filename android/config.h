@@ -19,9 +19,9 @@
 
 /* Start with debug message logging enabled */
 /* #undef ENABLE_DEBUG_LOGGING */
-
+#define USE_UDEV
 /* Message logging */
-#define ENABLE_LOGGING
+//#define ENABLE_LOGGING
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #define HAVE_DLFCN_H 1

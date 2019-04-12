@@ -35,6 +35,7 @@
 #ifdef HAVE_MISSING_H
 #include <missing.h>
 #endif
+#include <android/log.h>
 
 #include "libusb.h"
 #include "version.h"
@@ -263,10 +264,10 @@ static inline void usbi_dbg(const char *format, ...)
 
 #else /* ENABLE_LOGGING */
 
-#define usbi_err(ctx, ...) do { (void)ctx; } while (0)
-#define usbi_warn(ctx, ...) do { (void)ctx; } while (0)
-#define usbi_info(ctx, ...) do { (void)ctx; } while (0)
-#define usbi_dbg(...) do {} while (0)
+#define usbi_err(ctx, fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, "libusb", fmt, ##args)
+#define usbi_warn(ctx, fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, "libusb", fmt, ##args)
+#define usbi_info(ctx, fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, "libusb", fmt, ##args)
+#define usbi_dbg(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, "libusb", fmt, ##args)
 
 #endif /* ENABLE_LOGGING */
 

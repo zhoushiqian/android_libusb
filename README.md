@@ -30,3 +30,9 @@ http://mailing-list.libusb.info
 - Chris Dickens <christopher.a.dickens@gmail.com>
 
 (Please use the mailing list rather than mailing developers directly)
+
+# add libudev utils compile
+## 1.first compile libudev
+cd android_external_libudev && mm
+## 2 compile libudev and lsusb
+cd android/jni && mm

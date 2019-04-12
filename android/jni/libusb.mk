@@ -37,7 +37,8 @@ LOCAL_SRC_FILES := \
   $(LIBUSB_ROOT_REL)/libusb/os/linux_usbfs.c \
   $(LIBUSB_ROOT_REL)/libusb/os/poll_posix.c \
   $(LIBUSB_ROOT_REL)/libusb/os/threads_posix.c \
-  $(LIBUSB_ROOT_REL)/libusb/os/linux_netlink.c
+  $(LIBUSB_ROOT_REL)/libusb/os/linux_netlink.c \
+  $(LIBUSB_ROOT_REL)/libusb/os/linux_udev.c
 
 LOCAL_C_INCLUDES += \
   $(LOCAL_PATH)/.. \
@@ -47,6 +48,7 @@ LOCAL_C_INCLUDES += \
 LOCAL_EXPORT_C_INCLUDES := \
   $(LIBUSB_ROOT_ABS)/libusb
 
+LOCAL_SHARED_LIBRARIES := libudev
 LOCAL_LDLIBS := -llog
 
 LOCAL_MODULE := libusb1.0
